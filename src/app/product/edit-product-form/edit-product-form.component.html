@@ -1,6 +1,6 @@
 <div *ngIf="product">
   <h2>Edit {{ product.title }} Details</h2>
-  <div>
+  <form>
     <label for="title">Product Title:</label>
     <input id="title" [(ngModel)]="product.title" placeholder="title" />
     <label for="description">Product Description:</label>
@@ -9,5 +9,5 @@
     <input id="price" [(ngModel)]="product.price" placeholder="price" />
     <label for="tags">Product Tags:</label>
     <input id="tags" [(ngModel)]="product.tags" placeholder="tags" />
-  </div>
+  </form>
 </div>

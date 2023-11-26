@@ -6,7 +6,7 @@
         <p class="description"><span>Description:</span>{{ product.description }}</p>
         <p class="price"><span>Price:</span>{{ product.price }}</p>
       </div>
-      <button>Delete product</button>
+      <button (click)="deleteProduct(product.id)">Delete product</button>
     </li>
   </ul>
   <button>Add new product</button>
@@ -14,3 +14,4 @@
 
 <app-product-detail [product]="selectedProduct"></app-product-detail>
 <app-edit-product-form [product]="selectedProduct"></app-edit-product-form>
+<app-add-product-form></app-add-product-form>

@@ -23,6 +23,12 @@ export class ProductListComponent {
       .subscribe((products) => (this.products = products));
   }
 
+  deleteProduct(productId: number): void {
+    this.productService
+      .deleteProduct(productId)
+      .subscribe((products) => (this.products = products));
+  }
+
   ngOnInit(): void {
     this.getProducts();
   }

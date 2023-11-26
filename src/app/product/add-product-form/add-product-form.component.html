@@ -1,1 +1,15 @@
-<p>add-product-form works!</p>
+<div>
+  <h2>Add new product</h2>
+  <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+    <label for="title">Product Title:</label>
+    <input id="title" formControlName="title" placeholder="title" />
+    <label for="description">Product Description:</label>
+    <input id="description" formControlName="description" placeholder="description" />
+    <label for="price">Product Price:</label>
+    <input id="price" formControlName="price" placeholder="price" />
+    <label for="tags">Product Tags:</label>
+    <input id="tags" formControlName="tags" placeholder="tags" />
+    <button type="submit">Add new product</button>
+  </form>
+</div>
+ 
