@@ -1,0 +1,16 @@
+<div>
+  <ul class="products">
+    <li *ngFor="let product of products">
+      <div (click)="onSelect(product)">
+        <p class="title"><span>Product Title:</span>{{ product.title }}</p>
+        <p class="description"><span>Description:</span>{{ product.description }}</p>
+        <p class="price"><span>Price:</span>{{ product.price }}</p>
+      </div>
+      <button>Delete product</button>
+    </li>
+  </ul>
+  <button>Add new product</button>
+</div>
+
+<app-product-detail [product]="selectedProduct"></app-product-detail>
+<app-edit-product-form [product]="selectedProduct"></app-edit-product-form>
