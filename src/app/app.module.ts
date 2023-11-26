@@ -8,6 +8,9 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditProductFormComponent } from './product/edit-product-form/edit-product-form.component';
 import { AddProductFormComponent } from './product/add-product-form/add-product-form.component';
+import { TagListComponent } from './tag/tag-list/tag-list.component';
+import { AddTagFormComponent } from './tag/add-tag-form/add-tag-form.component';
+import { EditTagFormComponent } from './tag/edit-tag-form/edit-tag-form.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { AddProductFormComponent } from './product/add-product-form/add-product-
     ProductDetailComponent,
     ProductListComponent,
     EditProductFormComponent,
-    AddProductFormComponent
+    AddProductFormComponent,
+    TagListComponent,
+    AddTagFormComponent,
+    EditTagFormComponent
   ],
   imports: [
     BrowserModule,

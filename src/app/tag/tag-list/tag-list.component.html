@@ -1,0 +1,16 @@
+<div>
+  <h2>Tags</h2>
+  <ul>
+    <li *ngFor="let tag of tags">
+      <div>
+        <span>{{ tag.name }}</span>
+        <span> ({{ tag.color }})</span>
+        <button (click)="editTag(tag)">Edit</button>
+        <button (click)="deleteTag(tag.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<app-add-tag-form></app-add-tag-form>
+<app-edit-tag-form [selectedTag]="selectedTag" *ngIf="selectedTag"></app-edit-tag-form>

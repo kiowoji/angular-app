@@ -1,0 +1,10 @@
+<div>
+  <h2>Edit Tag</h2>
+  <form [formGroup]="tagForm" (ngSubmit)="onSubmit()">
+    <label for="name">Tag Name:</label>
+    <input id="name" formControlName="name" placeholder="Name" />
+    <label for="color">Tag Color:</label>
+    <input id="color" type="color" formControlName="color" placeholder="Color" />
+    <button type="submit">Save Changes</button>
+  </form>
+</div>
