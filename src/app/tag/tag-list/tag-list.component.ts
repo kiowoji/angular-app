@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ITag } from '../tag.model';
 import { TagService } from 'src/app/services/tag.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tag-list',
@@ -11,7 +12,7 @@ export class TagListComponent {
   tags: ITag[] = [];
   selectedTag?: ITag;
 
-  constructor(private tagService: TagService) {}
+  constructor(private tagService: TagService, private router: Router) {}
 
   ngOnInit(): void {
     this.getTags();
@@ -26,6 +27,7 @@ export class TagListComponent {
   }
 
   editTag(tag: ITag): void {
-    this.selectedTag = { ...tag }; 
+    this.selectedTag = { ...tag };
+    this.router.navigate(['/edit-tag', tag.id]);
   }
 }
