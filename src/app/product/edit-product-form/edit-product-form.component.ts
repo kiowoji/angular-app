@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { TagService } from 'src/app/services/tag.service';
 import { ITag } from 'src/app/tag/tag.model';
@@ -14,11 +15,14 @@ export class EditProductFormComponent {
   @Input() product?: IProduct;
   productForm: FormGroup;
   availableTags: ITag[] = [];
+  productId?: number;
 
   constructor(
     private fb: FormBuilder,
     private tagService: TagService,
-    private productService: ProductService
+    private productService: ProductService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.productForm = this.fb.group({
       title: ['', Validators.required],
@@ -34,31 +38,32 @@ export class EditProductFormComponent {
   ngOnInit(): void {
     this.tagService.getTags().subscribe((tags) => (this.availableTags = tags));
 
-    if (this.product) {
-      this.productForm.patchValue({
-        title: this.product.title,
-        description: this.product.description,
-        price: this.product.price,
-        tags: this.product.tags.map((tag) => tag.id),
-      });
-    }
+    this.route.paramMap.subscribe((params) => {
+      this.productId = +params.get('id')!;
+      if (this.productId) {
+        this.productService.getProduct(this.productId).subscribe((product) => {
+          if (product) {
+            this.productForm.patchValue({
+              ...product,
+              tags: product.tags.map((tag) => tag.id),
+            });
+          } else {
+            this.router.navigate(['/product-list']);
+          }
+        });
+      }
+    });
   }
 
   onSubmit(): void {
     if (this.productForm.valid) {
       const updatedProduct: IProduct = {
-        ...(this.product as IProduct),
+        id: this.productId,
         ...this.productForm.value,
-        tags: this.availableTags.filter((tag) =>
-          this.productForm.value.tags.includes(tag.id)
-        ),
       };
-
       this.productService
         .updateProduct(updatedProduct)
-        .subscribe((updatedProducts) => {
-          console.log('Product updated:', updatedProduct);
-        });
+        .subscribe(() => this.router.navigate(['/product-list']));
     }
   }
 }

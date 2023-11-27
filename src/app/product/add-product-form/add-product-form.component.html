@@ -8,7 +8,9 @@
     <label for="price">Product Price:</label>
     <input id="price" formControlName="price" placeholder="price" />
     <label for="tags">Product Tags:</label>
-    <input id="tags" formControlName="tags" placeholder="tags" />
+    <select multiple id="tags" formControlName="tags">
+      <option *ngFor="let tag of availableTags" [value]="tag.id">{{ tag.name }}</option>
+    </select>
     <button type="submit">Add new product</button>
   </form>
 </div>

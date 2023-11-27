@@ -3,4 +3,5 @@
   <p>Description: {{ product.description }}</p>
   <p>Price: {{ product.price }}</p>
   <p>Tags: {{ getTagNames() }}</p>
+  <a [routerLink]="['/edit-product', product.id]">Edit product</a>
 </div>

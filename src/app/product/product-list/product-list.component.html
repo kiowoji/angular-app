@@ -9,9 +9,6 @@
       <button (click)="deleteProduct(product.id)">Delete product</button>
     </li>
   </ul>
-  <button>Add new product</button>
+  <a routerLink="/new-product">Add new product</a>
 </div>
 
-<app-product-detail [product]="selectedProduct"></app-product-detail>
-<app-edit-product-form [product]="selectedProduct"></app-edit-product-form>
-<app-add-product-form></app-add-product-form>

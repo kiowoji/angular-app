@@ -14,6 +14,11 @@ export class ProductService {
     return products;
   }
 
+  getProduct(productId: number): Observable<IProduct | undefined> {
+    const product = Products.find((p) => p.id === productId);
+    return of(product);
+  }
+
   deleteProduct(productId: number): Observable<IProduct[]> {
     const updatedProducts = Products.filter(
       (product) => product.id !== productId
