@@ -1,4 +1,10 @@
 <div>
+    <button *ngFor="let tag of tags" (click)="filterByTag(tag.id)">
+      {{ tag.name }}
+    </button>
+    <button (click)="clearFilter()">Clear filter</button>
+  </div>
+<div>
   <ul class="products">
     <li *ngFor="let product of products">
       <div (click)="onSelect(product)">
