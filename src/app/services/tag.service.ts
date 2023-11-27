@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ITag } from '../tag/tag.model';
+import { Tags } from '../tag/tags';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TagService {
-  constructor() {}
+  private tags: ITag[] = Tags;
 
-  private tags: ITag[] = [
-    { id: 1, name: 'Tag1', color: '#FF5733' },
-    { id: 2, name: 'Tag2', color: '#33FF57' },
-  ];
+  constructor() {}
 
   getTags(): Observable<ITag[]> {
     return of(this.tags);

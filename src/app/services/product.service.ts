@@ -25,4 +25,14 @@ export class ProductService {
     Products.push(newProduct);
     return of(Products);
   }
+
+  updateProduct(updatedProduct: IProduct): Observable<IProduct[]> {
+    const index = Products.findIndex(
+      (product) => product.id === updatedProduct.id
+    );
+    if (index !== -1) {
+      Products[index] = updatedProduct;
+    }
+    return of(Products);
+  }
 }

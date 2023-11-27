@@ -1,13 +1,16 @@
 <div *ngIf="product">
-  <h2>Edit {{ product.title }} Details</h2>
-  <form>
+  <h2>Edit Product</h2>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
     <label for="title">Product Title:</label>
-    <input id="title" [(ngModel)]="product.title" placeholder="title" />
+    <input id="title" formControlName="title" placeholder="Title" />
     <label for="description">Product Description:</label>
-    <input id="description" [(ngModel)]="product.description" placeholder="description" />
+    <textarea id="description" formControlName="description" placeholder="Description"></textarea>
     <label for="price">Product Price:</label>
-    <input id="price" [(ngModel)]="product.price" placeholder="price" />
-    <label for="tags">Product Tags:</label>
-    <input id="tags" [(ngModel)]="product.tags" placeholder="tags" />
+    <input id="price" formControlName="price" placeholder="Price" />
+    <label for="tags">Tags:</label>
+    <select multiple id="tags" formControlName="tags">
+      <option *ngFor="let tag of availableTags" [value]="tag.id">{{ tag.name }}</option>
+    </select>
+    <button type="submit">Save Changes</button>
   </form>
 </div>

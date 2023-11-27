@@ -4,8 +4,12 @@ import { IProduct } from '../product.model';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.css'],
 })
 export class ProductDetailComponent {
   @Input() product?: IProduct;
+
+  getTagNames(): string {
+    return this.product?.tags.map((tag) => tag.name).join(', ') || '';
+  }
 }

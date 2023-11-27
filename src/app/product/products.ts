@@ -1,4 +1,5 @@
 import { IProduct } from './product.model';
+import { Tags } from '../tag/tags';
 
 export const Products: IProduct[] = [
   {
@@ -6,20 +7,20 @@ export const Products: IProduct[] = [
     title: 'Product 1',
     description: 'Description for product 1',
     price: 10,
-    tags: ['tag1', 'tag2'],
+    tags: [Tags[0], Tags[1]],
   },
   {
     id: 2,
     title: 'Product 2',
     description: 'Description for product 2',
     price: 20,
-    tags: ['tag1'],
+    tags: [Tags[2]],
   },
   {
     id: 3,
     title: 'Product 3',
     description: 'Description for product 3',
     price: 15,
-    tags: ['tag2'],
+    tags: [Tags[3]],
   },
 ];
