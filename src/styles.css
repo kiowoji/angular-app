@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-typography {
+  font-size: 16px;
+}
+
+.mat-button-toggle-group {
+  height: 38px;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.back-btn {
+  margin-top: 10px;
+}
+
+.edit-product,
+.add-product,
+.edit-tag,
+.new-tag {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-product__form,
+.add-product__form,
+.edit-tag__form,
+.new-tag__form {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin-top: 20px;
+}

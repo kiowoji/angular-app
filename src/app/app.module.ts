@@ -11,6 +11,13 @@ import { AddProductFormComponent } from './product/add-product-form/add-product-
 import { TagListComponent } from './tag/tag-list/tag-list.component';
 import { AddTagFormComponent } from './tag/add-tag-form/add-tag-form.component';
 import { EditTagFormComponent } from './tag/edit-tag-form/edit-tag-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -21,15 +28,22 @@ import { EditTagFormComponent } from './tag/edit-tag-form/edit-tag-form.componen
     AddProductFormComponent,
     TagListComponent,
     AddTagFormComponent,
-    EditTagFormComponent
+    EditTagFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatChipsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

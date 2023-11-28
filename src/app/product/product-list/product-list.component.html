@@ -1,21 +1,33 @@
-<div>
-    <button *ngFor="let tag of tags" (click)="filterByTag(tag.id)">
-      {{ tag.name }}
-    </button>
-    <button (click)="clearFilter()">Clear filter</button>
-    <a routerLink="/tag-list">Edit tags</a>
+<div class="container">
+  <div class="filter-tags">
+    <mat-chip-listbox aria-label="Filter tags" #toggleGroup multiple>
+      <mat-chip-option *ngFor="let tag of tags" (click)="filterByTag(tag.id)" color="accent">
+        <span>{{ tag.name }}</span>
+      </mat-chip-option>
+    </mat-chip-listbox>
+    <button mat-raised-button color="basic" (click)="clearFilter()">Clear filter</button>
+    <button mat-raised-button color="primary" routerLink="/tag-list">Edit tags</button>
   </div>
-<div>
-  <ul class="products">
-    <li *ngFor="let product of products">
-      <div (click)="onSelect(product)">
-        <p class="title"><span>Product Title:</span>{{ product.title }}</p>
-        <p class="description"><span>Description:</span>{{ product.description }}</p>
-        <p class="price"><span>Price:</span>{{ product.price }}</p>
-      </div>
-      <button (click)="deleteProduct(product.id)">Delete product</button>
-    </li>
-  </ul>
-  <a routerLink="/new-product">Add new product</a>
-</div>
 
+  <div class="product-list">
+    <ul class="product-list__cards">
+      <li *ngFor="let product of products" class="product-list__cards__item">
+        <div (click)="onSelect(product)">
+          <p class="title"><span>Product: </span>{{ product.title }}</p>
+          <p class="description">
+            <span>Description: </span>{{ product.description }}
+          </p>
+          <p class="price"><span>Price: </span>{{ product.price }}$</p>
+        </div>
+        <button
+          mat-raised-button
+          color="basic"
+          (click)="deleteProduct(product.id)"
+        >
+          Delete product
+        </button>
+      </li>
+    </ul>
+  </div>
+  <a mat-raised-button color="primary" routerLink="/new-product">Add new product</a>
+</div>

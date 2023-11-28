@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IProduct } from '../product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
 import { ITag } from 'src/app/tag/tag.model';
 import { Tags } from 'src/app/tag/tags';
+import { MatButtonToggleGroup } from '@angular/material/button-toggle';
+import { MatChipListbox } from '@angular/material/chips';
 
 @Component({
   selector: 'app-product-list',
@@ -11,6 +13,7 @@ import { Tags } from 'src/app/tag/tags';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
+  @ViewChild(MatChipListbox) toggleGroup!: MatChipListbox;
   products: IProduct[] = [];
   tags: ITag[] = Tags;
   selectedProduct?: IProduct;
@@ -50,6 +53,7 @@ export class ProductListComponent {
   }
 
   clearFilter(): void {
+    this.toggleGroup.value = null;
     this.selectedTags = [];
     this.getProducts();
   }

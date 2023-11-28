@@ -1,10 +1,21 @@
-<div>
+<div class="edit-tag">
   <h2>Edit Tag</h2>
-  <form [formGroup]="tagForm" (ngSubmit)="onSubmit()">
-    <label for="name">Tag Name:</label>
-    <input id="name" formControlName="name" placeholder="Name" />
-    <label for="color">Tag Color:</label>
-    <input id="color" type="color" formControlName="color" placeholder="Color" />
-    <button type="submit">Save Changes</button>
+  <form [formGroup]="tagForm" (ngSubmit)="onSubmit()" class="edit-tag__form">
+    <mat-form-field appearance="outline">
+      <mat-label>Tag Name:</mat-label>
+      <input matInput id="name" formControlName="name" placeholder="Name" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Tag Color:</mat-label>
+      <input
+        matInput
+        id="color"
+        type="color"
+        formControlName="color"
+        placeholder="Color"
+      />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save Changes</button>
+    <a mat-raised-button color="accent" routerLink="/product-list" class="back-btn">Go Back</a>
   </form>
 </div>

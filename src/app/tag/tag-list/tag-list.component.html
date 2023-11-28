@@ -1,15 +1,19 @@
-<div>
+<div class="tags">
   <h2>Tags</h2>
-  <ul>
-    <li *ngFor="let tag of tags">
-      <div>
+  <ul class="tags__list">
+    <li *ngFor="let tag of tags" class="tags__list__item">
+      <div class="tags__list__item__name" [ngStyle]="{ 'background': tag.color }">
         <span>{{ tag.name }}</span>
         <span> ({{ tag.color }})</span>
-        <button (click)="editTag(tag)">Edit</button>
-        <button (click)="deleteTag(tag.id)">Delete</button>
       </div>
+      <button mat-raised-button color="primary" (click)="editTag(tag)">
+        Edit
+      </button>
+      <button mat-raised-button color="warn" (click)="deleteTag(tag.id)">
+        Delete
+      </button>
     </li>
   </ul>
-  <a routerLink="/new-tag">Add new tag</a>
+  <a mat-raised-button color="primary" routerLink="/new-tag">Add new tag</a>
+  <a mat-raised-button color="accent" routerLink="/product-list" class="back-btn">Go to product list</a>
 </div>
-

@@ -1,17 +1,37 @@
-<div>
+<div class="add-product">
   <h2>Add new product</h2>
-  <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
-    <label for="title">Product Title:</label>
-    <input id="title" formControlName="title" placeholder="title" />
-    <label for="description">Product Description:</label>
-    <input id="description" formControlName="description" placeholder="description" />
-    <label for="price">Product Price:</label>
-    <input id="price" formControlName="price" placeholder="price" />
-    <label for="tags">Product Tags:</label>
-    <select multiple id="tags" formControlName="tags">
-      <option *ngFor="let tag of availableTags" [value]="tag.id">{{ tag.name }}</option>
-    </select>
-    <button type="submit">Add new product</button>
+  <form
+    [formGroup]="addProductForm"
+    (ngSubmit)="onSubmit()"
+    class="add-product__form"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label>Product Title:</mat-label>
+      <input matInput id="title" formControlName="title" placeholder="title" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Product Description:</mat-label>
+      <textarea
+        matInput
+        id="description"
+        formControlName="description"
+        placeholder="description"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Price:</mat-label>
+      <input matInput id="price" formControlName="price" placeholder="Price" />
+      <span matTextPrefix>$&nbsp;</span>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Tags:</mat-label>
+      <mat-select multiple id="tags" formControlName="tags">
+        <mat-option *ngFor="let tag of availableTags" [value]="tag.id">{{
+          tag.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Add new product</button>
+    <a mat-raised-button color="accent" routerLink="/product-list" class="back-btn">Go Back</a>
   </form>
 </div>
- 

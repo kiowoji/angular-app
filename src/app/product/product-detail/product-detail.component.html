@@ -1,7 +1,8 @@
-<div *ngIf="product">
+<div *ngIf="product" class="product-details">
   <h2>{{ product.title }} Details</h2>
   <p>Description: {{ product.description }}</p>
   <p>Price: {{ product.price }}</p>
   <p>Tags: {{ getTagNames() }}</p>
-  <a [routerLink]="['/edit-product', product.id]">Edit product</a>
+  <a mat-raised-button color="primary" [routerLink]="['/edit-product', product.id]">Edit product</a>
+  <a mat-raised-button color="accent" routerLink="/product-list" class="back-btn">Go Back</a>
 </div>
