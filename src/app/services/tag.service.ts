@@ -15,6 +15,10 @@ export class TagService {
     return of(this.tags);
   }
 
+  getTagsByIds(tagIds: number[]): ITag[] {
+    return this.tags.filter((tag) => tagIds.includes(tag.id));
+  }
+
   addTag(tag: ITag): Observable<ITag[]> {
     this.tags.push(tag);
     return of(this.tags);

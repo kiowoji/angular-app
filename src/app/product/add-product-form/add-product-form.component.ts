@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
 import { ITag } from 'src/app/tag/tag.model';
 import { TagService } from 'src/app/services/tag.service';
+import { IProduct } from '../product.model';
 
 @Component({
   selector: 'app-add-product-form',
@@ -11,8 +12,10 @@ import { TagService } from 'src/app/services/tag.service';
   styleUrls: ['./add-product-form.component.css'],
 })
 export class AddProductFormComponent {
+  @Input() product?: IProduct;
   addProductForm: FormGroup;
   availableTags: ITag[] = [];
+  productId?: number;
 
   constructor(
     private productService: ProductService,
@@ -33,9 +36,18 @@ export class AddProductFormComponent {
 
   onSubmit(): void {
     if (this.addProductForm.valid) {
-      const newProduct = this.addProductForm.value;
+      const newProduct: IProduct = {
+        id: this.productId,
+        ...this.addProductForm.value,
+        tags: this.addProductForm.value.tags.map((tagId: number) => {
+          const matchingTag = this.availableTags.find(
+            (tag) => tag.id === tagId
+          );
+          return matchingTag || tagId;
+        }),
+      };
       this.productService.addProduct(newProduct).subscribe();
-       this.router.navigate(['/product-list']);
+      this.router.navigate(['/product-list']);
     }
   }
 

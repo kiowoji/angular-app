@@ -7,7 +7,11 @@ import { Products } from '../product/products';
   providedIn: 'root',
 })
 export class ProductService {
-  constructor() {}
+  constructor() { }
+  
+  private generateUniqueId(): number {
+    return Math.max(...Products.map((product) => product.id), 0) + 1;
+  }
 
   getProducts(): Observable<IProduct[]> {
     const products = of(Products);
@@ -27,6 +31,7 @@ export class ProductService {
   }
 
   addProduct(newProduct: IProduct): Observable<IProduct[]> {
+    newProduct.id = this.generateUniqueId();
     Products.push(newProduct);
     return of(Products);
   }

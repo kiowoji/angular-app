@@ -45,7 +45,7 @@ export class EditProductFormComponent {
           if (product) {
             this.productForm.patchValue({
               ...product,
-              tags: product.tags.map((tag) => tag.id),
+              tags: product.tags,
             });
           } else {
             this.router.navigate(['/product-list']);
@@ -60,6 +60,12 @@ export class EditProductFormComponent {
       const updatedProduct: IProduct = {
         id: this.productId,
         ...this.productForm.value,
+        tags: this.productForm.value.tags.map((tagId:number) => {
+          const matchingTag = this.availableTags.find(
+            (tag) => tag.id === tagId
+          );
+          return matchingTag || tagId; 
+        }),
       };
       this.productService
         .updateProduct(updatedProduct)

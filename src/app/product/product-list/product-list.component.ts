@@ -4,7 +4,6 @@ import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
 import { ITag } from 'src/app/tag/tag.model';
 import { Tags } from 'src/app/tag/tags';
-import { MatButtonToggleGroup } from '@angular/material/button-toggle';
 import { MatChipListbox } from '@angular/material/chips';
 
 @Component({
