@@ -8,6 +8,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Product Title:</mat-label>
       <input matInput id="title" formControlName="title" placeholder="title" />
+      <mat-error *ngIf="addProductForm.get('title')?.hasError('required')">Title is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Product Description:</mat-label>
@@ -17,11 +18,14 @@
         formControlName="description"
         placeholder="description"
       ></textarea>
+      <mat-error *ngIf="addProductForm.get('description')?.hasError('required')">Description is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Price:</mat-label>
       <input matInput id="price" formControlName="price" placeholder="Price" />
       <span matTextPrefix>$&nbsp;</span>
+      <mat-error *ngIf="addProductForm.get('price')?.hasError('required')">Price is required</mat-error>
+      <mat-error *ngIf="addProductForm.get('price')?.hasError('pattern')">Price should be numeric</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Tags:</mat-label>

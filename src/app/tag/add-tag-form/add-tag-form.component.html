@@ -4,6 +4,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Tag Name:</mat-label>
       <input matInput id="name" formControlName="name" placeholder="Name" />
+      <mat-error *ngIf="tagForm.get('name')?.hasError('required')">Name is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Tag Color:</mat-label>
@@ -14,6 +15,7 @@
         formControlName="color"
         placeholder="Color"
       />
+      <mat-error *ngIf="tagForm.get('color')?.hasError('required')">Color is required</mat-error>
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Create Tag</button>
     <a mat-raised-button color="accent" routerLink="/product-list" class="back-btn">Go Back</a>
