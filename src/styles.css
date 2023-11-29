@@ -51,3 +51,21 @@ ul {
   margin-top: 20px;
   gap: 4px;
 }
+
+@media screen and (max-width: 980px) {
+  .edit-product__form,
+  .add-product__form,
+  .edit-tag__form,
+  .new-tag__form {
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .edit-product__form,
+  .add-product__form,
+  .edit-tag__form,
+  .new-tag__form {
+    width: 80vw;
+  }
+}

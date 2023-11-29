@@ -4,7 +4,7 @@
     <li *ngFor="let tag of tags" class="tags__list__item">
       <div class="tags__list__item__name" [ngStyle]="{ 'background': tag.color }">
         <span>{{ tag.name }}</span>
-        <span> ({{ tag.color }})</span>
+        <span class="tags__list__item__color"> ({{ tag.color }})</span>
       </div>
       <button mat-raised-button color="primary" (click)="editTag(tag)">
         Edit

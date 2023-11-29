@@ -5,8 +5,10 @@
         <span>{{ tag.name }}</span>
       </mat-chip-option>
     </mat-chip-listbox>
-    <button mat-raised-button color="accent" (click)="clearFilter()">Clear filter</button>
-    <button mat-raised-button color="primary" routerLink="/tag-list">Edit tags</button>
+    <div class="filter-tags__buttons">
+      <button mat-raised-button color="accent" (click)="clearFilter()">Clear filter</button>
+      <button mat-raised-button color="primary" routerLink="/tag-list">Edit tags</button>
+    </div>
   </div>
 
   <div class="product-list">

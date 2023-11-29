@@ -25,3 +25,19 @@
     gap: 10px;
     margin-top: 15px;
 }
+
+
+@media screen and (max-width: 630px) {
+
+    .tags__list__item__name{
+    width: 100px;
+}
+    .tags__list__item__color{
+        display: none;
+    }
+
+    .tags__buttons{
+  flex-direction: column;
+
+}
+}
