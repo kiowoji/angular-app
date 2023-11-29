@@ -1,6 +1,26 @@
 # AngularApp
 
+A basic Angular web application that allows users to manage a list of products and associated tags. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+
+## Prerequisites
+
+Before you begin, ensure that you have the following installed on your machine:
+
+- Node.js
+- npm (Node Package Manager)
+
+## Installation
+
+Clone the repository to your local machine:
+`git clone https://github.com/kiowoji/angular-app.git`
+
+Navigate to the project directory:
+`cd angular-app`
+
+Install dependencies:
+`npm install`
 
 ## Development server
 
