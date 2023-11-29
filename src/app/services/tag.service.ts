@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ITag } from '../tag/tag.model';
-import { Tags } from '../tag/tags';
+import { ITag } from '../models/tag.model';
+import { Tags } from '../components/tag/tags';
 
 @Injectable({
   providedIn: 'root',

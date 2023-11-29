@@ -1,0 +1,21 @@
+<div *ngIf="product" class="product-details">
+  <div class="product-details__info">
+    <h2>{{ product.title }} Details</h2>
+    <p><b>Description: </b>{{ product.description }}</p>
+    <p><b>Price: </b>${{ product.price }}</p>
+    <p><b>Tags:</b> {{ getTagNames() }}</p>
+  </div>
+  <a
+    mat-raised-button
+    color="primary"
+    [routerLink]="['/edit-product', product.id]"
+    >Edit product</a
+  >
+  <a
+    mat-raised-button
+    color="accent"
+    routerLink="/product-list"
+    class="back-btn"
+    >Go Back</a
+  >
+</div>

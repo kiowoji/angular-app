@@ -1,4 +1,4 @@
-import { ITag } from './tag.model';
+import { ITag } from '../../models/tag.model';
 
 export const Tags: ITag[] = [
   {

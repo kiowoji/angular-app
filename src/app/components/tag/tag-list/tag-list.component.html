@@ -1,5 +1,5 @@
 <div class="tags">
-  <h2>Tags</h2>
+  <h2>Tag List</h2>
   <ul class="tags__list">
     <li *ngFor="let tag of tags" class="tags__list__item">
       <div class="tags__list__item__name" [ngStyle]="{ 'background': tag.color }">
@@ -14,6 +14,8 @@
       </button>
     </li>
   </ul>
-  <a mat-raised-button color="primary" routerLink="/new-tag">Add new tag</a>
-  <a mat-raised-button color="accent" routerLink="/product-list" class="back-btn">Go to product list</a>
+  <div class="tags__buttons">
+    <a mat-raised-button color="primary" routerLink="/new-tag">Add new tag</a>
+    <a mat-raised-button color="accent" routerLink="/product-list">Go to product list</a>
+  </div>
 </div>

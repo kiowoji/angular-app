@@ -5,7 +5,7 @@
         <span>{{ tag.name }}</span>
       </mat-chip-option>
     </mat-chip-listbox>
-    <button mat-raised-button color="basic" (click)="clearFilter()">Clear filter</button>
+    <button mat-raised-button color="accent" (click)="clearFilter()">Clear filter</button>
     <button mat-raised-button color="primary" routerLink="/tag-list">Edit tags</button>
   </div>
 
@@ -13,15 +13,15 @@
     <ul class="product-list__cards">
       <li *ngFor="let product of products" class="product-list__cards__item">
         <div (click)="onSelect(product)">
-          <p class="title"><span>Product: </span>{{ product.title }}</p>
+          <p class="title"><span class="product-list__cards__item-text">Product: </span>{{ product.title }}</p>
           <p class="description">
-            <span>Description: </span>{{ product.description }}
+            <span class="product-list__cards__item-text">Description: </span><br>{{ product.description }}
           </p>
-          <p class="price"><span>Price: </span>{{ product.price }}$</p>
+          <p class="price"><span class="product-list__cards__item-text">Price: </span>${{ product.price }}</p>
         </div>
         <button
           mat-raised-button
-          color="basic"
+          color="accent"
           (click)="deleteProduct(product.id)"
         >
           Delete product

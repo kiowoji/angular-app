@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IProduct } from '../product.model';
-import { ITag } from 'src/app/tag/tag.model';
+import { IProduct } from '../../../models/product.model';
+import { ITag } from 'src/app/models/tag.model';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 

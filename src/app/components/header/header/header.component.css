@@ -1,0 +1,15 @@
+.header{
+    padding: 0 3rem;
+    display: flex;
+    gap: 40px;
+    margin-bottom: 2rem;
+}
+
+.header__item{
+    color: #fff;
+    text-decoration: none;
+}
+
+.header__item:hover{
+    color: #e0e0e0;
+}

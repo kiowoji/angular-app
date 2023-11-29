@@ -1,7 +1,8 @@
 .tags{
+    padding: 0 3rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .tags__list__item{
@@ -15,4 +16,12 @@
 .tags__list__item__name{
     border-radius: 4px;
     padding: 8px;
+    width: 180px;
+    text-align: center;
+}
+
+.tags__buttons{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
 }

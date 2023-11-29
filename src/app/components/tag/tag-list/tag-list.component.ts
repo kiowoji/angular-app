@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ITag } from '../tag.model';
+import { ITag } from '../../../models/tag.model';
 import { TagService } from 'src/app/services/tag.service';
 import { Router } from '@angular/router';
 

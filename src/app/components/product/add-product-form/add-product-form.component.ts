@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
-import { ITag } from 'src/app/tag/tag.model';
+import { ITag } from 'src/app/models/tag.model';
 import { TagService } from 'src/app/services/tag.service';
-import { IProduct } from '../product.model';
+import { IProduct } from '../../../models/product.model';
 
 @Component({
   selector: 'app-add-product-form',

@@ -1,5 +1,10 @@
 .product-details{
+    padding: 0 3rem;
     display: flex;
     flex-direction: column;
     width: 30vw;
+}
+
+.product-details__info {
+    margin-bottom: 15px;
 }

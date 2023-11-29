@@ -1,4 +1,4 @@
-import { ITag } from "../tag/tag.model";
+import { ITag } from "./tag.model";
 export interface IProduct{
     id: number;
     title: string;

@@ -5,7 +5,7 @@ body {
   height: 100%;
 }
 body {
-  margin: 20px;
+  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -49,4 +49,5 @@ ul {
   flex-direction: column;
   width: 30vw;
   margin-top: 20px;
+  gap: 4px;
 }

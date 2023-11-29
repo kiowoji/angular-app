@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TagService } from 'src/app/services/tag.service';
-import { ITag } from '../tag.model';
+import { ITag } from '../../../models/tag.model';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

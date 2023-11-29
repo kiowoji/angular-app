@@ -3,8 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { TagService } from 'src/app/services/tag.service';
-import { ITag } from 'src/app/tag/tag.model';
-import { IProduct } from '../product.model';
+import { ITag } from 'src/app/models/tag.model';
+import { IProduct } from '../../../models/product.model';
 
 @Component({
   selector: 'app-edit-product-form',

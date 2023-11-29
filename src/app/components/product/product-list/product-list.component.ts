@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { IProduct } from '../product.model';
+import { IProduct } from '../../../models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { Router } from '@angular/router';
-import { ITag } from 'src/app/tag/tag.model';
-import { Tags } from 'src/app/tag/tags';
+import { ITag } from 'src/app/models/tag.model';
+import { Tags } from 'src/app/components/tag/tags';
 import { MatChipListbox } from '@angular/material/chips';
 
 @Component({
